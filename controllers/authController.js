@@ -42,11 +42,13 @@ exports.signUp = catchAsync(async (req, res, next) => {
     await sendEmail({
       email: newUser.email,
       subject: 'SignUp successful',
-      message: 'You have successfully signed up to evenTify.',
+      message: 'You have successfully signed up to pickMart.',
     });
   } catch (err) {
     return next(
-      new AppError('There was an error sending the email. Try again later!')
+      new AppError(
+        `There was an error sending the email. Try again later!: ${err.message}`
+      )
     );
   }
 
@@ -180,7 +182,9 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
       await user.save({ validateBeforeSave: false });
 
     return next(
-      new AppError('There was an error sending the email. Try again later!')
+      new AppError(
+        `There was an error sending the email. Try again later!: ${err.message}`
+      )
     );
   }
 });

@@ -46,7 +46,7 @@ exports.updateOne = (Model) =>
   });
 
 exports.createOne = (Model) =>
-  catchAsync(async (req, res, next) => {
+  catchAsync(async (req, res) => {
     const newDoc = await Model.create(req.body);
 
     res.status(201).json({
@@ -79,7 +79,7 @@ exports.getOne = (Model, popOptions) =>
   });
 
 exports.getAll = (Model) =>
-  catchAsync(async (req, res, next) => {
+  catchAsync(async (req, res) => {
     let filter = {};
     if (req.params.userId) filter = { user: req.params.userId };
 
