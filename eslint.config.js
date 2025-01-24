@@ -12,7 +12,7 @@ module.exports = [
         { trailingComma: 'es5', endOfLine: 'auto' },
       ],
       'comma-dangle': ['off'],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^next$' }],
       'linebreak-style': 'off',
     },
     languageOptions: {
