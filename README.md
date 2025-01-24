@@ -22,3 +22,10 @@ pickMart is a RESTful API for an E-Commerce platform that provides essential fun
 - **Testing**: Postman for API testing
 - **Version Control**: Git, GitHub for version control
 - **Deployment**: Heroku, Railway, or Render for deployment; MongoDB Atlas for the cloud database
+
+## 4. Getting Started
+
+### 4.1 Prerequisites
+
+- [Node.js](https://nodejs.org/) - Ensure you have Node.js installed on your system.
+- [MongoDB](https://www.mongodb.com/) - You need a MongoDB instance for your database.
