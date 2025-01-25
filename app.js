@@ -10,6 +10,7 @@ const morgan = require('morgan');
 const app = express();
 const integrateDB = require('./config/db');
 const userRoute = require('./routes/userRoute.js');
+const productRoute = require('./routes/productRoute.js');
 const AppError = require('./utils/appError');
 const globalerrorhandler = require('./controllers/errorController.js');
 const superAdmin = require('./config/superAdmin');
@@ -77,6 +78,7 @@ app.get('/cancel', (req, res) => {
 
 // Main Routes
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/products', productRoute);
 
 // Unresolved Route
 app.all('*', (req, res, next) => {
