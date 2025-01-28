@@ -4,7 +4,12 @@ const Cart = require('./../models/cartModel');
 const Product = require('./../models/productModel');
 
 exports.cartExtra = catchAsync(async (req, res, next) => {
-  req.params.id = req.user.id;
+  req.params.userId = req.user.id;
+  next();
+});
+
+exports.cartMiidleWare = catchAsync(async (req, res, next) => {
+  req.body.userId = req.user.id;
   next();
 });
 
