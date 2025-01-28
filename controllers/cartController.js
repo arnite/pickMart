@@ -53,3 +53,17 @@ exports.getCart = catchAsync(async (req, res, next) => {
 
   res.status(200).json(cart);
 });
+
+exports.updateCart = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  const { productId } = req.body;
+
+  const cart = await Cart.findById(id);
+  if (!cart) return res.status(404).json({ message: 'Cart not found' });
+
+  cart.products = cart.products.filter(
+    (p) => p.productId.toString() !== productId
+  );
+  await cart.save();
+  res.status(200).json(cart);
+});
