@@ -11,6 +11,8 @@ const app = express();
 const integrateDB = require('./config/db');
 const userRoute = require('./routes/userRoute.js');
 const productRoute = require('./routes/productRoute.js');
+const orderRoute = require('./routes/orderRoute.js');
+const cartRoute = require('./routes/cartRoute.js');
 const AppError = require('./utils/appError');
 const globalerrorhandler = require('./controllers/errorController.js');
 const superAdmin = require('./config/superAdmin');
@@ -79,6 +81,8 @@ app.get('/cancel', (req, res) => {
 // Main Routes
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/products', productRoute);
+app.use('/api/v1/cart', cartRoute);
+app.use('/api/v1/orders', orderRoute);
 
 // Unresolved Route
 app.all('*', (req, res, next) => {
