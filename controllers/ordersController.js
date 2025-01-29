@@ -1,6 +1,7 @@
 const AppError = require('./../utils/appError');
 const catchAsync = require('./../utils/catchAsync');
 const Order = require('./../models/orderModel');
+const Product = require('./../models/productModel');
 
 exports.orderMiidleWare = catchAsync(async (req, res, next) => {
   req.body.userId = req.user.id;

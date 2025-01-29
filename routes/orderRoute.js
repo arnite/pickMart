@@ -3,11 +3,10 @@ const router = express.Router();
 const { protect, restrictTo } = require('../controllers/authController');
 const {
   orderMiidleWare,
-  orderExtra,
   createOrder,
   getAllOrders,
   getOrder,
-} = require('../controllers/orderController');
+} = require('../controllers/ordersController');
 
 router.use(protect);
 
@@ -16,6 +15,6 @@ router
   .post(restrictTo('user'), orderMiidleWare, createOrder)
   .get(restrictTo('admin'), getAllOrders);
 
-router.route('/:userId').get(restrictTo('user'), orderExtra, getOrder);
+router.route('/:userId').get(restrictTo('user'), getOrder);
 
 module.exports = router;

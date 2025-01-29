@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { protect, restrictTo } = require('../controllers/authController');
 const {
+  productMiddle,
   createProduct,
   getAllProducts,
   getProduct,
@@ -12,7 +13,7 @@ const {
 router
   .route('/')
   .get(getAllProducts)
-  .post(protect, restrictTo('admin'), createProduct);
+  .post(protect, restrictTo('admin'), productMiddle, createProduct);
 
 router
   .route('/:id')

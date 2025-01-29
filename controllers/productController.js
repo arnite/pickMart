@@ -1,13 +1,23 @@
 const Product = require('../models/productModel');
-const {
-  deleteOne,
-  updateOne,
-  createOne,
-  getOne,
-  getAll,
-} = require('./handlerFactory');
+const catchAsync = require('./../utils/catchAsync');
+const AppError = require('./../utils/appError');
+const { deleteOne, updateOne, getOne, getAll } = require('./handlerFactory');
 
-exports.createProduct = createOne(Product);
+exports.productMiddle = catchAsync(async (req, res, next) => {
+  req.body.createdBy = req.user.id;
+  next();
+});
+
+exports.createProduct = catchAsync(async (req, res) => {
+  const newProduct = await Product.create(req.body);
+
+  res.status(201).json({
+    status: 'success',
+    data: {
+      data: newProduct,
+    },
+  });
+});
 exports.getProduct = getOne(Product);
 exports.getAllProducts = getAll(Product);
 exports.updateProduct = updateOne(Product);
