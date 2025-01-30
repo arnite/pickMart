@@ -12,7 +12,7 @@ const {
 
 router.use(protect, restrictTo('user'));
 
-router.route('/:userId').get(cartExtra, getCart);
+router.get('/getMyCart', cartExtra, getCart);
 router.route('/').post(cartMiidleWare, addToCart);
 router.route('/:id').patch(updateCart).delete(deleteCart);
 

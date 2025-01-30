@@ -52,3 +52,12 @@ exports.getOrder = catchAsync(async (req, res, next) => {
 
   res.status(200).json(orders);
 });
+
+exports.getMyOrders = catchAsync(async (req, res, next) => {
+  const orders = await Order.find({ userId: req.user.id }).populate(
+    'products.productId'
+  );
+  if (!orders) return next(new AppError('Order not found', 404));
+
+  res.status(200).json(orders);
+});
