@@ -76,32 +76,95 @@ The server should now be running on `http://localhost:3000`
 
 ## 5. API Endpoints
 
-- **POST /api/v1/users/signUp**: Register a new user.
-- **POST /api/v1/users/createAdmin**: Create an admin (only accessible by superAdmin.)
-- **POST /api/v1/users/login**: Log in a user and return a JWT token.
-- **POST /api/v1/users/forgotPassword**: Request password reset.
-- **POST /api/v1/users/resetPassword/**:token: Reset the user's password using a reset token.
-- **POST /api/v1/users/updateMyPassword**: Update the user's password.
-- **POST /api/v1/users/updateMe**: Update the user's profile.
-- **GET /api/v1/users/me**: Get details of the currently authenticated user.
-- **DELETE /api/v1/users/deleteMe**: Delete the currently authenticated user.
-- **GET /api/v1/users**: Get a list of all users (only accessible by admin and superadmin).
-- **GET /api/v1/users/:id**: Get details of a specific user by ID.
-- **PATCH /api/v1/users/:id**: Update details of a specific user by ID.
-- **DELETE /api/v1/users/:id**: Delete a user by ID.
-- **GET /api/v1/products**: Get the list of all products
-- **POST /api/v1/products**: Create a product (only accessible to admin)
-- **GET /api/v1/products/:id**: Get the list of a specific product
-- **PATCH /api/v1/products/:id**: Update a specific product
-- **Delete /api/v1/products/:id**: Delete a specific product
-- **GET /api/v1/orders/getMyOrders**: Retrieve order for logged in user
-- **POST /api/v1/orders**: Create an order (only accessible to user)
-- **GET /api/v1/orders**: Retrieve all orders (only accessible to admin)
-- **GET /api/v1/orders/:userId**: Retrieve order for a specific user (only accessible to admin)
-- **GET /api/v1/cart/getMyCart**: Retrieve the cart of logged in user (only accessible to user)
-- **POST /api/v1/cart**: Create a cart and adds a product (only accessible to user)
-- **PATCH /api/v1/cart/:id**: Updates a product in the cart (only accessible to user)
-- **DELETE /api/v1/cart/:id**: Delete a product from the cart ( only accessible to user)
+### **User Authentication & Management**
+- **POST `/api/v1/users/signUp`**  
+  _Register a new user._
+
+- **POST `/api/v1/users/createAdmin`**  
+  _Create an admin (only accessible by superAdmin)._
+
+- **POST `/api/v1/users/login`**  
+  _Log in a user and return a JWT token._
+
+- **POST `/api/v1/users/forgotPassword`**  
+  _Request a password reset by providing an email._
+
+- **POST `/api/v1/users/resetPassword/:token`**  
+  _Reset the user's password using a reset token sent to their email._
+
+- **POST `/api/v1/users/updateMyPassword`**  
+  _Logged-in users can update their passwords._
+
+- **PATCH `/api/v1/users/updateMe`**  
+  _Update the logged-in user's profile information (name, email, etc.)._
+
+- **GET `/api/v1/users/me`**  
+  _Retrieve details of the currently authenticated user._
+
+- **DELETE `/api/v1/users/deleteMe`**  
+  _Delete the currently authenticated user's account._
+
+- **GET `/api/v1/users`**  
+  _Get a list of all registered users (only accessible by admin or superAdmin)._
+
+- **GET `/api/v1/users/:id`**  
+  _Get details of a specific user by their ID._
+
+- **PATCH `/api/v1/users/:id`**  
+  _Update user details by ID (only accessible by admin)._
+
+- **DELETE `/api/v1/users/:id`**  
+  _Delete a specific user by ID (only accessible by admin)._
+
+---
+
+### **Product Management**
+- **GET `/api/v1/products`**  
+  _Retrieve a list of all available products._
+
+- **POST `/api/v1/products`**  
+  _Create a new product (only accessible to admin)._
+
+- **GET `/api/v1/products/:id`**  
+  _Retrieve details of a specific product by its ID._
+
+- **PATCH `/api/v1/products/:id`**  
+  _Update the details of a specific product (only accessible to admin)._
+
+- **DELETE `/api/v1/products/:id`**  
+  _Remove a specific product from the database (only accessible to admin)._
+
+---
+
+### **Cart Management**
+- **GET `/api/v1/cart/getMyCart`**  
+  _Retrieve the current cart items of the logged-in user._
+
+- **POST `/api/v1/cart`**  
+  _Add a product to the cart (only accessible to users)._
+
+- **PATCH `/api/v1/cart/:id`**  
+  _Update the quantity of a product in the cart (only accessible to users)._
+
+- **DELETE `/api/v1/cart/:id`**  
+  _Remove a specific product from the cart (only accessible to users)._
+
+---
+
+### **Order Management**
+- **GET `/api/v1/orders/getMyOrders`**  
+  _Retrieve all past orders of the logged-in user._
+
+- **POST `/api/v1/orders`**  
+  _Create a new order from the items in the cart (only accessible to users)._
+
+- **GET `/api/v1/orders`**  
+  _Retrieve all orders in the system (only accessible to admin)._
+
+- **GET `/api/v1/orders/:userId`**  
+  _Retrieve the orders of a specific user (only accessible to admin)._
+
+---
 
 ## 6. API Documentation
 
