@@ -103,7 +103,20 @@ The server should now be running on `http://localhost:3000`
 - **PATCH /api/v1/cart/:id**: Updates a product in the cart (only accessible to user)
 - **DELETE /api/v1/cart/:id**: Delete a product from the cart ( only accessible to user)
 
-## 6. Contributing
+## 6. API Documentation
+
+You can find the Postman collection for this API [here](https://documenter.getpostman.com/view/37611500/2sAYX2MjEo).
+
+### How to Use the Postman Collection:
+
+1. Click on the link to open the Postman collection.
+2. Import the collection into your Postman app.
+3. Set up any required environment variables or authentication tokens.
+4. Run the requests to interact with the API.
+
+This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
+
+## 7. Contributing
 
 - **Fork the repository.**
 - **Create a new branch (git checkout -b feature-name).**
@@ -111,6 +124,6 @@ The server should now be running on `http://localhost:3000`
 - **Push to the branch (git push origin feature-name).**
 - **Create a new Pull Request.**
 
-## 7. License
+## 8. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**
