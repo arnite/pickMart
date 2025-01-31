@@ -48,7 +48,7 @@ pickMart is a RESTful API for an E-Commerce platform that provides essential fun
 3. Create `.env` file in the root directory and add the following environment variables:
 
    ```env
-   NODE_ENV=development
+   NODE_ENV=development (local) or production (deployment).
    DATABASE=your_default_database_url
    PORT=3000
    JWT_SECRET=your_jwt_secret
