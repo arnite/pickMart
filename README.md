@@ -48,22 +48,21 @@ pickMart is a RESTful API for an E-Commerce platform that provides essential fun
 3. Create `.env` file in the root directory and add the following environment variables:
 
    ```env
-   PORT= 3000
-   DATABASE= mongodb://localhost:27017/yourdbname
-   NODE_ENV= your environment (production / development)
-   JWT_SECRET= your jwt secret
-   JWT_EXPIRES_IN= your expiry day
-   EMAIL_USERNAME= mailtrap username
-   EMAIL_PASSWORD= mailtrap password
-   EMAIL_HOST= mailtrap host
-   EMAIL_PORT= mailtrap port
-   SAname= superAdmin name
-   SAemail= superAdmin email
-   SApassword= superAdmin password
-   SApasswordConfirm= superAdmin passwordConfirm
-   SArole= superAdmin
-   stripeApiKEY= your stripe ApiKey
-   STRIPE_WEBHOOK_SECRET= your stripe webhook secret
+   NODE_ENV=development
+   DATABASE=your_default_database_url
+   PORT=3000
+   JWT_SECRET=your_jwt_secret
+   JWT_EXPIRES_IN=your_expiry_time
+   JWT_COOKIE_EXPIRES_IN=your_expiry_time
+   EMAIL_USERNAME=mailtrap_username
+   EMAIL_PASSWORD=mailtrap_password
+   EMAIL_HOST=mailtrap_host
+   EMAIL_PORT=mailtrap_port
+   SUPER_ADMIN_NAME=super_admin_name
+   SUPER_ADMIN_EMAIL=super_admin_email
+   SUPER_ADMIN_PASSWORD=super_admin_password
+   STRIPE_API_KEY=your_stripe_api_key
+   STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
    ```
 
 4. Run the server:
@@ -77,6 +76,7 @@ The server should now be running on `http://localhost:3000`
 ## 5. API Endpoints
 
 ### **User Authentication & Management**
+
 - **POST `/api/v1/users/signUp`**  
   _Register a new user._
 
@@ -119,6 +119,7 @@ The server should now be running on `http://localhost:3000`
 ---
 
 ### **Product Management**
+
 - **GET `/api/v1/products`**  
   _Retrieve a list of all available products._
 
@@ -137,6 +138,7 @@ The server should now be running on `http://localhost:3000`
 ---
 
 ### **Cart Management**
+
 - **GET `/api/v1/cart/getMyCart`**  
   _Retrieve the current cart items of the logged-in user._
 
@@ -152,6 +154,7 @@ The server should now be running on `http://localhost:3000`
 ---
 
 ### **Order Management**
+
 - **GET `/api/v1/orders/getMyOrders`**  
   _Retrieve all past orders of the logged-in user._
 
