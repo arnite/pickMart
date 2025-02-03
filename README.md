@@ -193,7 +193,8 @@ This collection includes all the available endpoints for the API and their respe
 - **Push to the branch (git push origin feature-name).**
 - **Create a new Pull Request.**
 
-## 8. You can view the live version of the app here:
+## 8. Deployed App
+You can view the live version of the app here:
 
 [pickMart - Live API](https://pickmart-k8na.onrender.com)
 
