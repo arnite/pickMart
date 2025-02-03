@@ -195,7 +195,6 @@ This collection includes all the available endpoints for the API and their respe
 
 ## 8. Deployed App
 You can view the live version of the app here:
-
 [pickMart - Live API](https://pickmart-k8na.onrender.com)
 
 ## 9. License
