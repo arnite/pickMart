@@ -193,6 +193,9 @@ This collection includes all the available endpoints for the API and their respe
 - **Push to the branch (git push origin feature-name).**
 - **Create a new Pull Request.**
 
-## 8. License
+You can view the live version of the app here:  
+[pickMart - Live API]()
+
+## 9. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**
