@@ -2,9 +2,11 @@
   "name": "pickmart",
   "version": "1.0.0",
   "description": "- **Backend**:\r - **Database**:\r - **Authentication**:\r - **Testing**:\r - **Version Control**:\r - **Deployment**:",
-  "main": "eslint.config.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build process defined'",
+    "start": "node server.js"
   },
   "author": "Arnold",
   "license": "ISC",
