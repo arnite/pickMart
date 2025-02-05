@@ -69,7 +69,22 @@ console.log(process.env.NODE_ENV);
 
 // Test Route
 app.get('/', (req, res) => {
-  res.send('API running..');
+  res.send(`
+    <div style="margin-top: 20px; text-align: center; font-family: Arial, sans-serif;">
+      <h1 style="color: blue; font-size: 2em;"><strong>API is Running Successfully</strong></h1>
+      <p style="font-size: 1.2em;">The backend is operational and ready to handle requests.</p>
+      <p>For API documentation, visit: 
+        <a href="https://documenter.getpostman.com/view/37611500/2sAYX2MjEo" target="_blank" style="color: green; font-weight: bold;">
+          Postman Collection
+        </a>
+      </p>
+      <script>
+        setTimeout(() => {
+            window.location.href = "https://documenter.getpostman.com/view/37611500/2sAYX2MjEo";
+        }, 3000); // Redirect after 3 seconds
+      </script>
+    </div>
+  `);
 });
 
 app.get('/success', (req, res) => {
